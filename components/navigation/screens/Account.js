@@ -1,12 +1,14 @@
 import * as React from 'react';
-import {  View, Text, StyleSheet } from 'react-native';
+import {  View, Div, Text, StyleSheet } from 'react-native';
 
 
 
 function Account({navigation}) {
     return (
         <View style = {styles.container1}> 
-        <Text>Account</Text>
+        <View style = {styles.containerTop}>
+       <Text>Hello account</Text>
+       </View>
         </View>
     
 )};
@@ -19,7 +21,14 @@ const styles = StyleSheet.create({
       alignItems: 'center'
       
     },
-    
+   containerTop : {
+
+
+
+
+borderWidth : 1 ,
+   },
+
     textstyle : {
       color : 'black'
     }

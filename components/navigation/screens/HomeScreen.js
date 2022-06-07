@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Button, Icon, Div, Text } from "react-native-magnus";
 import { useState } from 'react';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer' ;
-
+import { useCountdown } from 'react-native-countdown-circle-timer'
 
 
 export default function HomeScreen({ navigation }) {
@@ -16,7 +16,7 @@ export default function HomeScreen({ navigation }) {
   const [liveTime, setTime] = React.useState();
   const [isPlaying, setIsPlaying] = React.useState(false); // start circle animation
   const [key, setKey] = useState(0);  // restart animation
-
+const [remainingTime, setRemain] = useState("00:00");
   React.useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date().toLocaleString('en-UK'));
@@ -88,22 +88,25 @@ export default function HomeScreen({ navigation }) {
         </Div>
 
       </Div>
-            <Text  color= {btnTitle === "Check in" ? "#0b776a" : "#a71e1e"} p="2xl">{message} </Text>
+            <Text  color= {btnTitle === "Check in" ? "#5A0BDB" : "#a71e1e"} p="2xl">{message} </Text>
 
 <Div pb={6} >
       <CountdownCircleTimer 
        key={key}
         isPlaying={isPlaying}
         duration={40}
-        colors={[ '#58DBCC', '#ED3838', '#ED3838', '#FF4D49' ]}
+        colors={[ '#5A0BDB', '#ED3838', '#ED3838', '#FF4D49' ]}
         colorsTime={[40, 39, 10, 0]}
         
       >
 
         {({ remainingTime }) => 
+        
+         
         <Div colum >
-<Button bg={btnTitle === "Check in" ? "#58DBCC" : "#FF5A5A"}
-        color= {btnTitle === "Check in" ? "#0b776a" : "#a71e1e"}
+         
+<Button bg={btnTitle === "Check in" ? "#5006C9" : "#FF5A5A"}
+        color= {btnTitle === "Check in" ? "white" : "#a71e1e"}
         fontWeight= "bold"
        
         borderless
@@ -117,7 +120,10 @@ export default function HomeScreen({ navigation }) {
       >
         {btnTitle}
       </Button>
-        </Div>}
+        </Div>
+       
+        }
+        
       </CountdownCircleTimer>
 
      </Div>
@@ -154,7 +160,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontFamily : 'Montserrat'
+   
 
   },
   container2: {

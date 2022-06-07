@@ -41,7 +41,7 @@ screenOptions={({ route }) => ({
           },
         })}
         tabBarOptions={{
-          activeTintColor: '#009786',
+          activeTintColor: '#5001D1',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 3,  fontSize: 12,  },
           style: { padding: 66, height: 190}
