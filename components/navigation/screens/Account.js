@@ -3,6 +3,7 @@ import {  View, Div, Text, StyleSheet } from 'react-native';
 
 
 
+
 function Account({navigation}) {
     return (
         <View style = {styles.container1}> 

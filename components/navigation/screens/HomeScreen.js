@@ -13,22 +13,38 @@ export default function HomeScreen({ navigation }) {
   const [checkouTime, setcheckoutTime] = useState('00:00');
   const [btnTitle, setTitle] = useState('Check in');
   const [isPressed, setPress] = useState(false);
-  const [liveTime, setTime] = React.useState();
+  const [liveDate, setLiveDate] = React.useState();
+  const [liveTime, setLiveTime] = React.useState();
   const [isPlaying, setIsPlaying] = React.useState(false); // start circle animation
   const [key, setKey] = useState(0);  // restart animation
 const [remainingTime, setRemain] = useState("00:00");
-  React.useEffect(() => {
-    const timer = setInterval(() => {
+  
+React.useEffect(() => {
+    const livedate = setInterval(() => {
+     
+      let options = { weekday: 'long', literal : ",",  month: 'long', day: 'numeric' };
 
-      let options = { weekday: 'long',  month: 'long', day: 'numeric' };
-
-      setTime(new Date().toLocaleString('en-UK', options));
+      setLiveDate(new Date().toLocaleString('en-UK', options));
     }, 1000);
-
     return () => {
-      clearInterval(timer);
+      clearInterval(livedate);
     };
   }, []); // show current time live 
+//////
+  
+React.useEffect(() => {
+  const livetime = setInterval(() => {
+   
+    let options2 = {   hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric', };
+
+    setLiveTime(new Date().toLocaleString('en-UK', options2));
+  }, 1000);
+  return () => {
+    clearInterval(livetime);
+  };
+}, []); // show current time live 
 
 
 
@@ -84,9 +100,12 @@ const [remainingTime, setRemain] = useState("00:00");
         <Div mt="md" alignItems='center' justifyContent='center' p="md">
           <Div borderWidth="md" row mt="lg" >
 
-            
-            <Text fontSize="20"
+            <Div column style={{alignContent : "center", color : "purple", justifyContent : "center", alignItems : "center"}} >
+            <Text fontSize="16"
+            fontWeight="normal"   ml="lg">{liveDate}</Text>
+                    <Text mt="md" fontSize="30" 
             fontWeight="bold"   ml="lg">{liveTime}</Text>
+          </Div>
           </Div>
         </Div>
 
