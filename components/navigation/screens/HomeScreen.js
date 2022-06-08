@@ -19,7 +19,10 @@ export default function HomeScreen({ navigation }) {
 const [remainingTime, setRemain] = useState("00:00");
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setTime(new Date().toLocaleString('en-UK'));
+
+      let options = { weekday: 'long',  month: 'long', day: 'numeric' };
+
+      setTime(new Date().toLocaleString('en-UK', options));
     }, 1000);
 
     return () => {
