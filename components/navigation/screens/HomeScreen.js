@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
   const [liveTime, setLiveTime] = React.useState();
   const [isPlaying, setIsPlaying] = React.useState(false); // start circle animation
   const [key, setKey] = useState(0);  // restart animation
-const [remainingTime, setRemain] = useState("00:00");
+  const [remainingTime, setRemain] = useState("00:00");
   
 React.useEffect(() => {
     const livedate = setInterval(() => {
