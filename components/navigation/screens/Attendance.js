@@ -44,6 +44,7 @@ export default function Attendance({navigation}) {
     underlayColor="grey200"
      fontWeight='600'
   >Request Time Update</Button>
+  
   </Div>
         </View>
     
