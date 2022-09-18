@@ -8,7 +8,7 @@ function Account({navigation}) {
     return (
         <View style = {styles.container1}> 
         <View style = {styles.containerTop}>
-      <Text>Account page </Text>
+      <Text>Account Page </Text>
       
        </View>
         </View>
