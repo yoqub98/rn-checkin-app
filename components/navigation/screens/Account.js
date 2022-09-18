@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {  View, Div, Text, StyleSheet } from 'react-native';
-
+import Fetch from '../../Fetch';
 
 
 
@@ -8,7 +8,8 @@ function Account({navigation}) {
     return (
         <View style = {styles.container1}> 
         <View style = {styles.containerTop}>
-       <Text>Hello account</Text>
+      <Text>Account page here</Text>
+      
        </View>
         </View>
     

@@ -3,12 +3,25 @@ import {  View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
-
+import { initializeApp } from 'firebase/app';
 //screens 
 import HomeScreen from './screens/HomeScreen';
 import Attendance from './screens/Attendance';
 import Account from './screens/Account';
 
+////////////////////// Firebase Credentials 
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////// App
 const item1 = "Home" ;
 const item2 = "Attendance"; 
 const item3 = "Account";
